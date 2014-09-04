@@ -4,9 +4,16 @@ jQuery widget for password complexity validation
 
 ## Dependencies:
 
-You must have fontawesome configurated in your project if you want 'checkes' and 'Xes' on your password validations.
+* jQuery UI (recommended version 1.10)
+* jQuery (recommended version 1.11)
+
+You must have fontawesome configurated in your project if you want '✓' and 'X' on your password validations.
 
 ## Usage Example:
+
+### JSFIDDLE example:
+
+Check http://jsfiddle.net/gabriellett/k32t1d7b/
 
 ### Using the default configuration:
 
@@ -14,7 +21,7 @@ Where you want your validations to appear, set the element id to `password_valid
 
 Add `data-validate-complexity=true` to your password field. If you have a password confirmation field, add a `data-confirmation-field` attribute and set its value to the confirmation field CSS selector, for example, `data-confirmation-field="#user_password_confirmation"`
 
-	$("[data-validate-complexity='true'").each(function(){
+	$("[data-validate-complexity='true']").each(function(){
 		$(this).validatePassword({
 			validations: {
 				minUppercaseChars: {
@@ -30,7 +37,7 @@ Add `data-validate-complexity=true` to your password field. If you have a passwo
 					message: "At least one special letter (!$%@#)",
 					regex: "^(?=.*[!$%@#]+).+$"},
 				minLength: {
-					message: "At least 8 characters"
+					message: "At least 8 characters",
 					regex: ".{8,}$"}
 			}
 		});
